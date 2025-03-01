@@ -5,15 +5,21 @@ services:
     restart: unless-stopped
     security_opt:
     - no-new-privileges:true
+    environment:
+      - GLOBALVAR1=${GLOBALVAR1}
+      - GLOBALVAR2=${GLOBALVAR2}
+      - LOCALVAR1=${LOCALVAR1}
+      - LOCALVAR2=${LOCALVAR2}
 ## <--container specific
-    container_name: ${CONTNAME}
+    container_name: ${LOCALVAR1}
     image: server2
     ports:
       - '8102:8080'
     labels:
-      - homepage.group=${GROUP2}
-      - homepage.name=${CONTNAME}
-      - homepage.icon=${ICONHREF}
-      - homepage.href=${HREF}
-      - homepage.description=${CONTNAME}
+      - homepage.group=${GLOBALVAR1}
+      - homepage.name=${LOCALVAR1}
+      - homepage.icon=${LOCALVAR2}
+      - homepage.href=${GLOBALVAR1}
+      - homepage.description=${LOCALVAR2}
+   #command: printenv GLOBALVAR1 GLOBALVAR2 LOCALVAR1 LOCALVAR2
 
