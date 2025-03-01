@@ -21,6 +21,35 @@ Each 'container_N' directory has the following structure
 docker-compose.yaml # a docker-compose.yaml file used to launch the image
 ```
 
+The docker-compose file uses a range of docker compose features including profiles and lots of variables
+
+```yaml
+services:
+  server1:
+## <--common
+    profiles: [all, "${CONTNAME}"]
+    restart: unless-stopped
+    security_opt:
+    - no-new-privileges:true
+    environment:
+      - GLOBALVAR1=${GLOBALVAR1}
+      - GLOBALVAR2=${GLOBALVAR2}
+      - LOCALVAR1=${LOCALVAR1}
+      - LOCALVAR2=${LOCALVAR2}
+      - CONTNAME=${CONTNAME}
+## <--container specific
+    container_name: ${CONTNAME}
+    image: nested-var-compose
+    ports:
+      - '8101:8080'
+    labels:
+      - homepage.group=${GLOBALVAR1}
+      - homepage.name=${LOCALVAR1}
+      - homepage.icon=${LOCALVAR2}
+      - homepage.href=${GLOBALVAR1}
+      - homepage.description=${LOCALVAR2}
+```
+
 # Getting Started
 
 Begin by building the images for each 'container_N'
