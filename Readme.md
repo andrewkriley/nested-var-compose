@@ -69,5 +69,5 @@ server1  | Press CTRL+C to quit
 ```
 You can then launch the URLs to see the variables being pulled from the environment variables.
 
-http://<yourip>:8101<br>
-http://<yourip>:8102
+http://yourip:8101<br>
+http://yourip:8102
