@@ -54,10 +54,17 @@ services:
 
 # Getting Started
 
+Clone the repo
+
+```bash
+git clone git@github.com:andrewkriley/nested-var-compose.git
+```
+
 Begin by building the images for each 'container_N'
 
 ```bash
-cd images
+cd nested-var-compose
+cd image
 docker build -t nested-var-compose .
 
 ```
