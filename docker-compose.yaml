@@ -1,3 +1,5 @@
 include:
   - ./container_1/docker-compose.yaml
   - ./container_2/docker-compose.yaml
+  - ./container_3/docker-compose.yaml
+  - ./container_4/docker-compose.yaml

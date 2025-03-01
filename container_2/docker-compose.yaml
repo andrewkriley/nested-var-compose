@@ -1,7 +1,7 @@
 services:
   server2:
 ## <--common
-    profiles: [all, server2]
+    profiles: [all, "${CONTNAME}"]
     restart: unless-stopped
     security_opt:
     - no-new-privileges:true
@@ -10,9 +10,10 @@ services:
       - GLOBALVAR2=${GLOBALVAR2}
       - LOCALVAR1=${LOCALVAR1}
       - LOCALVAR2=${LOCALVAR2}
+      - CONTNAME=${CONTNAME}
 ## <--container specific
-    container_name: ${LOCALVAR1}
-    image: server2
+    container_name: ${CONTNAME}
+    image: nested-var-compose
     ports:
       - '8102:8080'
     labels:
