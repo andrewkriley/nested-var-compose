@@ -1,0 +1,19 @@
+services:
+  server1:
+## <--common
+    profiles: [all, server1]
+    restart: unless-stopped
+    security_opt:
+    - no-new-privileges:true
+## <--container specific
+    container_name: ${CONTNAME}
+    image: server1
+    ports:
+      - '8101:8080'
+    labels:
+      - homepage.group=${GROUP1}
+      - homepage.name=${CONTNAME}
+      - homepage.icon=${ICONHREF}
+      - homepage.href=${HREF}
+      - homepage.description=${CONTNAME}
+
