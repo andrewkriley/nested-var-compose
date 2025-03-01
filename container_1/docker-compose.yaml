@@ -1,10 +1,12 @@
-services:
-  server1:
-## <--common
-    profiles: [all, "${CONTNAME}"]
+x-service: &base-service
     restart: unless-stopped
     security_opt:
     - no-new-privileges:true
+services:
+  server1:
+## <--common
+    <<: *base-service
+    profiles: [all, "${CONTNAME}"]
     environment:
       - GLOBALVAR1=${GLOBALVAR1}
       - GLOBALVAR2=${GLOBALVAR2}
