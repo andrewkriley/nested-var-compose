@@ -113,3 +113,34 @@ http://yourip:8101<br>
 http://yourip:8102<br>
 http://yourip:8103<br>
 http://yourip:8104
+
+
+Stoping all the containers
+```bash
+docker compose --profile all down
+
+[+] Running 5/5
+ ✔ Container server3                   Removed                                                                                                                                                                                                                                                           10.3s 
+ ✔ Container server2                   Removed                                                                                                                                                                                                                                                           10.4s 
+ ✔ Container server1                   Removed                                                                                                                                                                                                                                                           10.4s 
+ ✔ Container server4                   Removed                                                                                                                                                                                                                                                           10.4s 
+ ✔ Network nested-var-compose_default  Removed   
+ ```
+
+Starting a container at a time
+
+```bash
+docker:~/dev/nested-var-compose$ docker compose --profile server1 up -d
+[+] Running 2/2
+ ✔ Network nested-var-compose_default  Created                                                                                                                                                                                                                                                 
+ ✔ Container server1  Started                                                                                                                                                                                                                                                          
+TESTandreril@docker-int:~/dev/nested-var-compose$ docker compose --profile server2 up -d
+[+] Running 1/1
+ ✔ Container server2  Started                                                                                                                                                                                                                                                                      
+TESTandreril@docker-int:~/dev/nested-var-compose$ docker compose --profile server3 up -d
+[+] Running 1/1
+ ✔ Container server3  Started                                                                                                                                                                                                                                                                      
+TESTandreril@docker-int:~/dev/nested-var-compose$ docker compose --profile server4 up -d
+[+] Running 1/1
+ ✔ Container server4  Started                                                                                                                                                                                                                                                                   
+TESTandreril@docker-int:~/dev/nested-var-compose$ 
