@@ -6,22 +6,22 @@ Provides a way to set nested environment variables at a global and local scope. 
 ![alt text](https://raw.githubusercontent.com/andrewkriley/nested-var-compose/refs/heads/v0.3/images/3and4.png)
 
 
-The intent of this project is demonstrate how nested variables can be used and inspire you to use something similar in your own projects.
+The intent of this project is demonstrate how nested variables can be used and inspire you to use something similar in your own projects.<p>
 
-This project has the following structure
+This project has the following structure<p>
 
-.env # a global environment variables file that sets environment variables that will be available to all containers and docker-compose files.
-docker-compose.yaml # a main docker compose file that uses the include: function to lauch 2 other containers. 
-container_1 # a directory hosting files for a container that pulls the global and local variables
-container_2 # a second directory hosting files for a container that pulls the global and local variables.
-container_3 # a third directory hosting files for a container that pulls the global and local variables.
-container_4 # a fourth directory hosting files for a container that pulls the global and local variables.
+.env # a global environment variables file that sets environment variables that will be available to all containers and docker-compose files.<br>
+docker-compose.yaml # a main docker compose file that uses the include: function to lauch 2 other containers. <br>
+container_1 # a directory hosting files for a container that pulls the global and local variables.<br>
+container_2 # a second directory hosting files for a container that pulls the global and local variables.<br>
+container_3 # a third directory hosting files for a container that pulls the global and local variables.<br>
+container_4 # a fourth directory hosting files for a container that pulls the global and local variables.<br>
 
 
-Each 'container_N' directory has the following structure
+Each 'container_N' directory has the following structure<p>
 
-.env # a local (to the container) environment variables file that sets environment variables that will be available to all containers and docker-compose files.
-docker-compose.yaml # a docker-compose.yaml file used to launch the image
+.env # a local (to the container) environment variables file that sets environment variables that will be available to all containers and docker-compose files.<br>
+docker-compose.yaml # a docker-compose.yaml file used to launch the image.<p>
 
 The docker-compose file uses a range of docker compose features including profiles and lots of variables
 
