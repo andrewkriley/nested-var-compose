@@ -1,7 +1,6 @@
-x-service: &base-service
-    restart: unless-stopped
-    security_opt:
-    - no-new-privileges:true
+include: 
+  - /home/andreril/dev/nested-var-compose/base-config.yaml
+
 services:
   server1:
 ## <--common
