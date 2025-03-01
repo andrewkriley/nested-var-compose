@@ -2,6 +2,10 @@
 
 Provides a way to set nested environment variables at a global and local scope. It will expose variables to both the container and the docker-compose file.
 
+![alt text](https://raw.githubusercontent.com/andrewkriley/nested-var-compose/refs/heads/v0.3/images/1and2.png)
+![alt text](https://raw.githubusercontent.com/andrewkriley/nested-var-compose/refs/heads/v0.3/images/3and4.png)
+
+
 The intent of this project is demonstrate how nested variables can be used and inspire you to use something similar in your own projects.
 
 This project has the following structure
