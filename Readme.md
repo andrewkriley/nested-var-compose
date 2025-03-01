@@ -67,3 +67,7 @@ server1  |  * Running on http://127.0.0.1:8080
 server1  |  * Running on http://192.168.240.2:8080
 server1  | Press CTRL+C to quit
 ```
+You can then launch the URLs to see the variables being pulled from the environment variables.
+
+http://<yourip>:8101
+http://<yourip>:8102
