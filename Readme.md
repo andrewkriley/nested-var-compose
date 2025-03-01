@@ -70,7 +70,8 @@ docker compose --profile all up
 It will then launch like this
 
 ```bash
-docker:~/dev/nested-var-compose$ docker compose --profile all up
+docker compose --profile all up
+
 [+] Running 5/5
  ✔ Network nested-var-compose_default  Created                                                                                                                                                                                                                                                            0.0s 
  ✔ Container server1                   Created                                                                                                                                                                                                                                                            0.1s 
@@ -130,7 +131,8 @@ docker compose --profile all down
 Starting a container at a time
 
 ```bash
-docker:~/dev/nested-var-compose$ docker compose --profile server1 up -d
+docker compose --profile server1 up -d
+
 [+] Running 2/2
  ✔ Network nested-var-compose_default  Created                                                                                                                                                                                                                                                 
  ✔ Container server1  Started                                                                                                                                                                                                                                                          
