@@ -41,3 +41,29 @@ cd ..
 docker compose --profile all up
 ```
 
+It will then launch like this
+
+```bash
+docker-server:~/dev/nested-var-compose$ docker compose --profile all up
+[+] Running 3/3
+ ✔ Network nested-var-compose_default  Created                                                                                      0.0s 
+ ✔ Container server1                   Created                                                                                      0.0s 
+ ✔ Container server2                   Created                                                                                      0.0s 
+Attaching to server1, server2
+server1  |  * Tip: There are .env files present. Install python-dotenv to use them.
+server2  |  * Tip: There are .env files present. Install python-dotenv to use them.
+server1  |  * Serving Flask app 'app.py'
+server1  |  * Debug mode: off
+server2  |  * Serving Flask app 'app.py'
+server2  |  * Debug mode: off
+server2  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+server2  |  * Running on all addresses (0.0.0.0)
+server2  |  * Running on http://127.0.0.1:8080
+server2  |  * Running on http://192.168.240.3:8080
+server2  | Press CTRL+C to quit
+server1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+server1  |  * Running on all addresses (0.0.0.0)
+server1  |  * Running on http://127.0.0.1:8080
+server1  |  * Running on http://192.168.240.2:8080
+server1  | Press CTRL+C to quit
+```
